@@ -1,0 +1,33 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-12">
+
+      <button (click)="createcompte()" class="btn btn-outline-secondary">Create compte</button>
+      <table class="table table-striped">
+        <thead>
+          <tr >
+            <th scope="col">Numéro de compte</th>
+            <th scope="col">libelle</th>
+            <th scope="col">Nom Client</th>
+            <th scope="col">Prénom Client</th>
+            <th scope="col">Numéro de téléphone</th>
+            <th scope="col">Sexe</th>
+            <th scope="col">Solde</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let compteur of compteList">
+              <td>{{compteur.idcompte}}</td>
+              <td>{{compteur.libelle}}</td>
+              <td>{{compteur.nom_user}}</td> 
+              <td>{{compteur.prenom_user}}</td>
+              <td>{{compteur.phone}}</td> 
+              <td>{{compteur.sexe}}</td>
+              <td>{{compteur.solde}}</td>
+            </tr>
+        </tbody>
+     
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class=" content">
+    <div class=" row">
+      <div class=" col-12">
+          <h1>Création d'un nouveau compte</h1>
+<div class="md-form">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="libellé" id="libelle" required [(ngModel)]="NewCompte.libelle" name="nom">
+      </div>
+
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="Nom user" id="nom" required [(ngModel)]="NewCompte.nom_user" name="nom_user">
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Prénom user" id="prenom_user" required [(ngModel)]="NewCompte.prenom_user"
+            name="prenom_user">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Numéro de téléphone" id="phone" required [(ngModel)]="NewCompte.phone" name="phone">
+        </div>
+    
+    <div class="form-group">
+      <label for="name">Sexe&emsp;</label>
+      <input type="radio" name="type"  (click)="changeValue('F')" />&ensp;F&ensp;/
+      <input type="radio" name="type"  (click)="changeValue('M')" />&ensp;M
+    </div>
+
+    <button type="button" class="btn btn-sm btn-add" (click)="createcompte()">Add</button>
+            </form>
+          </div>
+        </div>
+        <div [hidden]="!submitted">
+          <h4>You submitted successfully!</h4>
+        </div>
+</div></div></div>
+
+     

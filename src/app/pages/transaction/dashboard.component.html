@@ -1,0 +1,31 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-12">
+
+      <button (click) = "retirerArgent()" class="btn btn-outline-secondary">Dépot d'argent</button>
+      <button (click) = "retirerArgent()" class="btn btn-outline-secondary">Retrait d'argent</button>
+      <br><br><h1>Rapport des transactions</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr >
+            <th scope="col">Numéro transaction</th>
+            <th scope="col">Type</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Descriptif</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let compteur of transactionList">
+              <td>{{compteur.idtransaction}}</td>
+              <td>{{compteur.type}}</td>
+              <td>{{compteur.montant}}</td> 
+              <td>{{compteur.descriptif}}</td>
+              <td>{{compteur.date}}</td>
+            </tr>
+        </tbody>
+     
+      </table>
+    </div>
+  </div>
+</div>
