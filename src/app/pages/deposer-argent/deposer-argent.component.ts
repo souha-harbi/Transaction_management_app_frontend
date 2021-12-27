@@ -12,13 +12,16 @@ export class DeposerArgentComponent implements OnInit {
 
 
   transaction : transaction = new transaction()
+  submitted = false;
+  idcompte : string
+
   constructor(private TransactionService : TransactionService,  private router: Router) { }
 
   ngOnInit(): void {
   }
   RetirerArgrent(){
 
-    this.TransactionService.DeposerArgent(this.transaction).subscribe(data => {
+    this.TransactionService.DeposerArgent(this.transaction,this.idcompte).subscribe(data => {
       console.log("******");
       })
       this.router.navigate(['/dashboard']);

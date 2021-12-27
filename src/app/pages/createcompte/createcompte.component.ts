@@ -23,7 +23,7 @@ export class CreatecompteComponent implements OnInit {
     console.log("////");
     
     this.Compt = data;})
-    this.router.navigate(['/icons']);
+    this.router.navigate(['/compte']);
 }
 
 changeValue(sexe : string){

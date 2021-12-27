@@ -5,8 +5,8 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
 import { AdminLayoutRoutes } from "./admin-layout.routing";
-import { DashboardComponent } from "../../pages/transaction/dashboard.component";
-import { IconsComponent } from "../../pages/compte/icons.component";
+import { TransactionComponent } from "../../pages/transaction/transaction.component";
+import { CompteComponent } from "../../pages/compte/compte.component";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
@@ -19,8 +19,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     NgbModule,
   ],
   declarations: [
-    DashboardComponent,
-    IconsComponent,
+    TransactionComponent,
+    CompteComponent,
   ]
 })
 export class AdminLayoutModule {}

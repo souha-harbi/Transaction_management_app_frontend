@@ -16,13 +16,17 @@ export class TransactionService {
     return this.http.get<transaction[]>(`${this.Url}/GetAllTransaction`);
   }
 
+  GetTransactionById(idtransaction : string) :Observable<transaction> {
+    return this.http.get<transaction>(`${this.Url}/GetTransactionById/${idtransaction}`);
+  }
+
   RetirerArgent(transaction : transaction) : Observable<any> {
-    return this.http.put(`${this.Url}/RetirerArgent`, transaction);
+    return this.http.post(`${this.Url}/RetirerArgent`,transaction);
   }
 
   
-  DeposerArgent(transaction : transaction) : Observable<any> {
-    return this.http.put(`${this.Url}/DeposerArgent`, transaction);
+  DeposerArgent(transaction : transaction,idcompte : string) : Observable<any> {
+    return this.http.put(`${this.Url}/DeposerArgent/${idcompte}`, transaction);
   }
 
 

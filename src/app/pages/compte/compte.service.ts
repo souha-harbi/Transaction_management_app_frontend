@@ -15,7 +15,15 @@ export class CompteService {
     return this.http.get<compte[]>(`${this.Url}/GetAllCompte`);
   }
 
+  GetCompteById(idcompte : string) :Observable<compte> {
+    return this.http.get<compte>(`${this.Url}/GetCompteById/${idcompte}`);
+  }
+
   createCompte(compte : compte): Observable<any> {
     return this.http.post<compte>(`${this.Url}/CreateCompte`,compte);
+  }
+
+  deleteCompte(id: string): Observable<any> {
+    return this.http.delete(`${this.Url}/DeleteCompte${id}`, { responseType: 'text' });
   }
 }

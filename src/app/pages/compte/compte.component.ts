@@ -4,10 +4,10 @@ import { compte } from "src/app/entities/compte";
 import { CompteService } from "./compte.service";
 
 @Component({
-  selector: "app-icons",
-  templateUrl: "icons.component.html"
+  selector: "app-compte",
+  templateUrl: "compte.component.html"
 })
-export class IconsComponent implements OnInit {
+export class CompteComponent implements OnInit {
   constructor(private compteservice:CompteService,  private router: Router) {}
   compteList : compte[]
 
@@ -25,4 +25,10 @@ export class IconsComponent implements OnInit {
   createcompte(){
     this.router.navigate(['/addcompte']);
   }
+  deletecompte(id : string){
+    this.compteservice.deleteCompte(id).subscribe(data => {
+      console.log("compte supprimée");
+  }) 
+  //window.location.reload();
+}
 }

@@ -1,0 +1,56 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-12">
+
+      <button (click)="deposerArgent()" class="btn btn-outline-secondary" style="margin-left: 600px;">Dépot
+        d'argent</button>
+      <button (click)="retirerArgent()" class="btn btn-outline-secondary">Retrait d'argent</button>
+      <br><br>
+      <h1>Rapport des transactions</h1>
+
+
+
+      <div class="row">
+        <div class="col"> 
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Filtering</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="AllTransactionListFilter()">Tous les transactions</button>
+              <button ngbDropdownItem (click)="CreditTransactionListFilter()">Crédit</button>
+              <button ngbDropdownItem (click)="DebitTransactionListFilter()">Débit</button>
+            </div>
+          </div>
+          <label style="margin-left: 20px;">Transaction entre</label>
+        <input type="date" id="start" name="trip-start" value="2021-12-27" style="margin-left: 20px;" required [(ngModel)]="startdate">
+        <label style="margin-left: 20px;">et</label>
+        <input type="date" id="end" name="trip-start" value="2021-12-27" style="margin-left: 20px;" required [(ngModel)]="enddate">
+          <button (click)="FilteringByDate()" class="btn btn-outline-secondary" style="margin-left: 20px;" >Submit</button>
+      </div>
+
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Numéro transaction</th>
+              <th scope="col">Numéro de compte</th>
+              <th scope="col">Type</th>
+              <th scope="col">Montant</th>
+              <th scope="col">Descriptif</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let compteur of FiltertransactionList">
+              <td>{{compteur.idtransaction}}</td>
+              <td>{{compteur.idcompte}}</td>
+              <td>{{compteur.type}}</td>
+              <td>{{compteur.montant}}</td>
+              <td>{{compteur.descriptif}}</td>
+              <td>{{compteur.date}}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>

@@ -4,4 +4,5 @@ export class transaction{
     public montant : number
     public descriptif : string
     public date : Date
+    public idcompte : string
 }

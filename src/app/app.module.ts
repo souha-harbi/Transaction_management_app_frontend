@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
-//import { FormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from "./app.component";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
@@ -17,8 +18,8 @@ import { DeposerArgentComponent } from './pages/deposer-argent/deposer-argent.co
 
 @NgModule({
   imports: [
-    //BrowserAnimationsModule,
-   // FormsModule,
+    BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     ComponentsModule,
     NgbModule,
